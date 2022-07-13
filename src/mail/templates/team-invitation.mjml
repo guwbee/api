@@ -1,0 +1,46 @@
+ <mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-body background-color="#f5f5f5" />
+      <mj-column width="570px" />
+
+      <mj-class name="small" font-size="14px" padding="0 0" line-height="140%" />
+      <mj-class name="title" line-height="280%" font-size="13px" />
+      <mj-class name="body-text" line-height="150%" align="center" padding="8px 16px" />
+
+      <mj-class name="big" font-size="20px" />
+      <mj-class name="card" padding="24px 0px" border-radius="6px" width="100%" background-color="white" />
+      <mj-class name="cta" font-size="20px" font-weight="bold" inner-padding="16px 32px" border-radius="4px" padding="26px 0" background-color="#F8AA00" color="white" />
+      <mj-all font-family="OpenSans,Helvetica,Arial" font-size="16px" />
+    </mj-attributes>
+    <mj-style>
+      em{ font-weight:bold; text-decoration:none; font-style:normal; }
+      @media (max-width:480px) { .title div{ font-size:11px !important; } }
+    </mj-style>
+  </mj-head>
+
+  <mj-body>
+    <mj-section>
+      <mj-column width="100%">
+        <mj-image width="294px" padding="30px 0px" padding-bottom="50px" align="left" src="https://res.cloudinary.com/auriwork/image/upload/v1618586975/auriwork_zo9f8k.png" alt="auriwork"></mj-image>
+
+        <mj-text css-class="title" mj-class="title" padding="0 8px">
+          <h1>
+            Convite para partipar do grupo {{ teamName }}
+          </h1>
+        </mj-text>
+      </mj-column>
+
+      <mj-column mj-class="card" margin-bottom="60px">
+        <mj-text mj-class="body-text">
+          <em>{{ fromName }}</em>, convidou você para participar do grupo  <em>{{ teamName }}</em>
+        </mj-text>
+
+        <mj-button mj-class="cta" href="{{ link }}">Confirmar Participação</mj-button>
+      </mj-column>
+      <mj-column>
+        <mj-spacer height="60px" />
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

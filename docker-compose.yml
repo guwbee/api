@@ -1,0 +1,42 @@
+version: "3"
+services:
+  rds:
+    container_name: redis
+    image: redis:latest
+  lb:
+      container_name: loadbalancer
+      image: haproxy
+      ports:
+          - "8080:8080"
+      volumes:
+          - ./haproxy:/usr/local/etc/haproxy
+  api:
+    container_name: api
+    restart: always
+    build: .
+    # ports:
+    #   - "3333:3333"
+    environment:
+        - REDIS_HOST=rds
+        - API_URL=https://api.guwbee.com
+        - FRONT_URL=https://guwbee.com
+        - COOKIE_NAME=auth_token
+    command: yarn start
+
+  # ws1:
+  #     container_name: ws1
+  #     image: api
+  #     environment:
+  #         - APPID=1111
+  # ws2:
+  #     image: api
+  #     environment:
+  #         - APPID=2222
+  # ws3:
+  #     image: api
+  #     environment:
+  #         - APPID=3333
+  # ws4:
+  #     image: api
+  #     environment:
+  #         - APPID=4444
